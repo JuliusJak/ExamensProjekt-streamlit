@@ -36,7 +36,25 @@ def create_new_user(username:str, password:str, role:str|None=None) -> dict|set:
     else:
         return f"Failed to create user. Status code: {response.status_code}, Message: {response.text}"
 
-def get_user(username, password):
+def get_user(username:str|None, password:str|None, role:str|None, id:int|None) -> dict|None:
+    """Searches for users in the DB matching the given parameters
+
+    Parameters
+    ----------
+    username
+        Users username
+    password
+        Users password
+    role
+        Users role
+    id
+        Users account id
+
+    Returns
+    -------
+        The user that matches the search
+    """
+
     url = "http://localhost:8082/users/search"
 
     params = {

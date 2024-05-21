@@ -4,7 +4,7 @@ import streamlit as st
 
 def navBar():
 
-    pages = ["app.py","pages/study_material.py","pages/admin.py","pages/profile.py"]
+    pages = ["app","main_menu","admin","profile"]
 
     col1,col2,col3,col4 = st.columns(len(pages))
 
@@ -12,7 +12,7 @@ def navBar():
         st.page_link("app.py")    
     
     with col2:
-        st.page_link("pages/study_material.py")
+        st.page_link("pages/main_menu.py")
     
     with col3:
         st.page_link("pages/admin.py")
