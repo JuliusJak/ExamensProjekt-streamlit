@@ -1,5 +1,5 @@
 import streamlit as st
-from api_requests import get_user
+from api_requests.users_api import get_user
 import time
 
 st.title("Sign in Page")
@@ -16,7 +16,7 @@ with st.form("sign in form",clear_on_submit=True):
     if sign_in_button:
 
         with st.spinner("Confirming account details"):
-            user = get_user.get_user(username,password)
+            user = get_user(username,password)
             user = user[0]
 
             if user != None:

@@ -1,6 +1,6 @@
 import streamlit as st
 from components.navBar import navBar
-from api_requests.create_user import create_new_user
+from api_requests.users_api import create_new_user
 
 navBar()
 st.title("Admin page")

@@ -1,5 +1,5 @@
 import streamlit as st
-from api_requests.create_user import create_new_user
+from api_requests.users_api import create_new_user
 import time
 
 st.title("Sign up page")
