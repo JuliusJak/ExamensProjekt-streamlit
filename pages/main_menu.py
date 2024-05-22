@@ -12,8 +12,8 @@ with st.container(border=True):
 
 
     st.subheader("Practice")
-    st.page_link(page="pages/study_material.py",label="Study Material")
-    st.page_link(page="pages/study_questions.py",label="Study Questions")
-    st.page_link(page="pages/images.py",label="Images")
+    st.page_link(page="pages/study_material_practice.py",label="Study Material")
+    st.page_link(page="pages/study_questions_practice.py",label="Study Questions")
+    st.page_link(page="pages/images_practice.py",label="Images")
 
     st.subheader("Tests")
