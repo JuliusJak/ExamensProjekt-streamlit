@@ -1,6 +1,6 @@
 import streamlit as st
 from components.navBar import navBar
-from admin_features import create_new_user, create_new_question, search_for_user, update_user, delete_user
+from admin_features import create_new_user, create_new_question, search_for_user, update_user, delete_user,delete_question
 
 navBar()
 st.title("Admin page")
@@ -21,7 +21,9 @@ with st.container(border=True):
 with st.container(border=True):
     if st.checkbox("Create New Question"):
         create_new_question.admin_new_question()
-
+    if st.checkbox("Delete Question"):
+        delete_question.admin_delete_question()
+        
 with st.container(border=True):
     if st.checkbox("Create New Study Material*"):
         pass
