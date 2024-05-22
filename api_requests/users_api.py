@@ -59,7 +59,9 @@ def get_user(username:str|None, password:str|None, role:str|None, id:int|None) -
 
     params = {
         "username": username,
-        "password": password
+        "password": password,
+        "id":id,
+        "role":role
     }
     
     response = requests.get(url, params=params)
@@ -68,3 +70,55 @@ def get_user(username:str|None, password:str|None, role:str|None, id:int|None) -
         return response.json()
     else:
         print(f"Request failed with status code {response.status_code}")
+
+def update_user(user_id:int, new_username:str|None=None, new_password:str|None=None, new_role:str|None=None) -> str:
+    """Select a user by their Id and then update their information by inputting new parameters
+
+    Parameters
+    ----------
+    user_id
+        This is how the script knows what user to update
+    new_username, optional
+        A string that will become the new username, by default None
+    new_password, optional
+        A string that will become the new password, by default None
+    new_role, optional
+        A string that will become the new role, by default None
+
+    Returns
+    -------
+        A string saying the user have been successfully updated
+    """
+
+    url = "http://localhost:8082/users/update"
+
+    params = {
+        "newUsername": new_username,
+        "newPassword": new_password,
+        "id":user_id,
+        "newRole":new_role
+    }
+
+    response = requests.put(url, params=params)
+
+    if response.status_code == 200:
+        return response.content
+    else:
+        return f"Request failed with status code {response.status_code}"
+
+
+def delete_user(user_id:int) -> str:
+
+    url = "http://localhost:8082/users/delete"
+
+    params = {
+        "id":user_id
+    }
+
+    response = requests.delete(url,params=params)
+
+    if response.status_code == 200:
+        return response.content
+    else:
+        return f"Request failed with status code {response.status_code}"
+    
