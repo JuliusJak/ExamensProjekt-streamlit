@@ -1,12 +1,17 @@
 import streamlit as st
 from components.navBar import navBar
 from api_requests.users_api import create_new_user
+from authentication import authentication
 
 st.set_page_config(
     page_title="Main Menu",
     page_icon=None
 )
+authentication()
+
 navBar()
+#NOTE Temporary
+st.write("Current User:",st.session_state.current_user)
 
 with st.container(border=True):
 

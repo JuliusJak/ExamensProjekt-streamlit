@@ -9,9 +9,6 @@ st.set_page_config(
 if "main_page_content" not in st.session_state:
     st.session_state.main_page_content = None
 
-if "current_user" not in st.session_state:
-    st.session_state.current_user = None
-
 st.title("WELCOME :)")
 
 with st.container(border=True):

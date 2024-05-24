@@ -1,7 +1,9 @@
 import streamlit as st
 from components.navBar import navBar
 from api_requests.study_material_api import study_material_search
+from authentication import authentication
 
+authentication()
 navBar()
 st.title("Study Material")
 

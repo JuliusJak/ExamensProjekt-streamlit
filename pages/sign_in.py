@@ -14,7 +14,7 @@ with st.form("sign in form",clear_on_submit=True):
     if sign_in_button:
 
         with st.spinner("Confirming account details"):
-            user = get_user(username,password)
+            user = get_user(username=username,password=password)
             user = user[0]
 
             if user != None:

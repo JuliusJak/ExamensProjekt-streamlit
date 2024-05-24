@@ -1,6 +1,7 @@
 import streamlit as st
 from components.navBar import navBar
 from streamlit_image_coordinates import streamlit_image_coordinates
+from authentication import authentication
 
 
 st.set_page_config(
@@ -8,6 +9,7 @@ st.set_page_config(
     page_icon=None,
     layout="wide"
 )
+authentication()
 navBar()
 st.title("Image practice")
 with st.container(border=True):

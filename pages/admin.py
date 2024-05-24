@@ -1,7 +1,11 @@
 import streamlit as st
 from components.navBar import navBar
 from admin_features import create_new_user, create_new_question, search_for_user, update_user, delete_user,delete_question
+from authentication import authentication
 
+
+#NOTE Needs more authenitcation since it's admin
+authentication()
 navBar()
 st.title("Admin page")
 
