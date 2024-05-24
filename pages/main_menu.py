@@ -14,11 +14,20 @@ navBar()
 st.write("Current User:",st.session_state.current_user)
 
 with st.container(border=True):
+    
+    #Use columns to center the page_links
+    col1,col2,col3 = st.columns([1,0.8,1])
+    with col2:
 
+        st.subheader("Practice")
 
-    st.subheader("Practice")
-    st.page_link(page="pages/study_material_practice.py",label="Study Material")
-    st.page_link(page="pages/study_questions_practice.py",label="Study Questions")
-    st.page_link(page="pages/images_practice.py",label="Images")
+        if st.button("Study Material",use_container_width=True):
+            st.switch_page("pages/study_material_practice.py")
 
-    st.subheader("Tests")
+        if st.button("Study Questions",use_container_width=True):
+            st.switch_page("pages/study_questions_practice.py")
+
+        if st.button("Study Images",use_container_width=True):
+            st.switch_page("pages/images_practice.py")
+
+        st.subheader("Tests")

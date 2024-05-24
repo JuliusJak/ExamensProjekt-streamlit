@@ -1,6 +1,6 @@
 import streamlit as st
 from components.navBar import navBar
-from admin_features import create_new_user, create_new_question, search_for_user, update_user, delete_user,delete_question
+from admin_features import manage_images, manage_questions, manage_users
 from authentication import authentication
 
 
@@ -11,23 +11,27 @@ st.title("Admin page")
 
 with st.container(border=True):
     if st.checkbox("Search For User"):
-        search_for_user.admin_search_for_user()
+        manage_users.admin_search_for_user()
 
     if st.checkbox("Create User"):
-        create_new_user.admin_new_user()
+        manage_users.admin_new_user()
 
     if st.checkbox("Update User Information"):
-        update_user.admin_update_user()
+        manage_users.admin_update_user()
 
     if st.checkbox("Delete User"):
-        delete_user.admin_delete_user()
+        manage_users.admin_delete_user()
 
 with st.container(border=True):
     if st.checkbox("Create New Question"):
-        create_new_question.admin_new_question()
+        manage_questions.admin_new_question()
     if st.checkbox("Delete Question"):
-        delete_question.admin_delete_question()
+        manage_questions.admin_delete_question()
         
 with st.container(border=True):
     if st.checkbox("Create New Study Material*"):
         pass
+
+with st.container(border=True):
+    if st.checkbox("Upload New Image question"):
+        manage_images.admin_upload_image()

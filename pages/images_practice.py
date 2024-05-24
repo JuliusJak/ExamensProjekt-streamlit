@@ -14,7 +14,9 @@ navBar()
 st.title("Image practice")
 with st.container(border=True):
     st.subheader("Click on the battery")
-    value = streamlit_image_coordinates("images/car_engine.jpg")
+    width = 700
+    height = width * 0.667
+    value = streamlit_image_coordinates("images/car_engine.jpg",height,width)
 
     if value:
         x, y = value["x"], value["y"]
