@@ -1,39 +1,11 @@
 import streamlit as st
 from streamlit_image_coordinates import streamlit_image_coordinates
-from PIL import Image
-from io import BytesIO
-import base64
 
-# def admin_upload_image():
+def admin_upload_image_question():
 
-#     # File uploader
-#     uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
-
-#     if uploaded_file is not None:
-#         # To read file as bytes
-#         bytes_data = uploaded_file.read()
-        
-#         # Load the image with PIL
-#         image = Image.open(BytesIO(bytes_data))
-                
-#         # Use the streamlit_image_coordinates function
-#         coordinates = streamlit_image_coordinates(
-#             source=image,
-#             key="uploaded_image"
-#         )
-        
-#         # Display the coordinates returned
-#         st.write("Coordinates:", coordinates)
-
-
-def admin_upload_image():
-
-    uploaded_file = st.file_uploader("Upload An Image Here", type=["jpg","jpeg","png"])
-
-    if uploaded_file is not None:
-        st.image(uploaded_file)
-
-        if st.button("Upload Image"):
-            #TODO add api call to upload image to DB
-            st.success("Image Uploaded")
-            
+    pass
+#TODO User selects an image from a the image directory. Either with the select image library or simple select_box
+#Then the image is loaded with streamlit_image_coordinates
+#Then it will take the first and second x/y coord and save them together with the image name.
+#Then it will use the api to send a dict with the image_name, image_question and 4 coords. This will be saved in the DB
+#Then when a quesstion is called. The api will return the name of the image and the 4 coords. Then do the same as already done in images_practice

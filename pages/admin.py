@@ -33,5 +33,7 @@ with st.container(border=True):
         pass
 
 with st.container(border=True):
-    if st.checkbox("Upload New Image question"):
-        manage_images.admin_upload_image()
+    if st.checkbox("Upload New Image Question"):
+        manage_images.admin_upload_image_question()
+
+        
