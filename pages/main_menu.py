@@ -5,7 +5,8 @@ from authentication import authentication
 
 st.set_page_config(
     page_title="Main Menu",
-    page_icon=None
+    page_icon=None,
+    layout="wide"
 )
 authentication()
 
@@ -31,3 +32,8 @@ with st.container(border=True):
             st.switch_page("pages/images_practice.py")
 
         st.subheader("Tests")
+
+        if st.button("Test Questions",use_container_width=True):
+            st.switch_page("pages/test_questions.py")    
+        if st.button("Image Questions",use_container_width=True):
+            st.switch_page("pages/test_image_questions.py")    
