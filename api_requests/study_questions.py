@@ -2,7 +2,7 @@ import requests
 
 def get_questions() -> dict|str:
 
-    url = "http://localhost:8082/test/questions"
+    url = "http://localhost:8082/questions/get"
 
     response = requests.get(url)
 
@@ -14,7 +14,7 @@ def get_questions() -> dict|str:
     
 def create_question(question_body:dict) -> dict|str:
     
-    url = "http://localhost:8082/test/questions/create"
+    url = "http://localhost:8082/questions/create"
 
     response = requests.post(url,json=question_body)
 
@@ -25,7 +25,7 @@ def create_question(question_body:dict) -> dict|str:
 
 def delete_question(user_id:int) -> str:
 
-    url = "http://localhost:8082/test/questions/delete"
+    url = "http://localhost:8082/questions/delete"
 
     params = {
         "id":user_id
@@ -40,7 +40,7 @@ def delete_question(user_id:int) -> str:
     
 def get_random_questions(category_id:str|None=None) -> dict|str:
 
-    url = "http://localhost:8082/test/questions/random"
+    url = "http://localhost:8082/questions/random"
 
     params = {
         "categoryId": category_id
