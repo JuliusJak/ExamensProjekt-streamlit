@@ -4,6 +4,11 @@ from admin_features import manage_images, manage_questions, manage_users
 from authentication import authentication
 
 
+st.set_page_config(
+    page_title="Admin Page",
+    layout="wide"
+)
+
 #NOTE Needs more authenitcation since it's admin
 authentication()
 navBar()
