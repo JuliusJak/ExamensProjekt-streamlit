@@ -1,6 +1,6 @@
 import requests
 
-def create_new_user(username:str, password:str, role:str|None=None) -> dict|set:
+def create_new_user(username:str, password:str, role:str|None=None) -> dict|str:
     """Creates a new user using the backend api
 
     Parameters

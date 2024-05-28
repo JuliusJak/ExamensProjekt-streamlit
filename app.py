@@ -15,7 +15,7 @@ if "main_page_content" not in st.session_state:
 #     st.session_state.current_user = dev_user
 
 st.title("WELCOME :smile:")
-#TODO waht if a user is invalid. return propper error message to users
+
 with st.container(border=True):
 
     #Use columns to center the page_links

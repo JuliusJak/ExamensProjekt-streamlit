@@ -9,7 +9,6 @@ with st.form("sign in form",clear_on_submit=True):
     username = st.text_input("Username")
     password = st.text_input("Password",type="password")
 
-    #TODO add messages if the user missed to enter password or something. or if name or password is wrong
     sign_in_button = st.form_submit_button("Sign in")
     if sign_in_button:
 
