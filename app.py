@@ -15,7 +15,7 @@ if "main_page_content" not in st.session_state:
 #     st.session_state.current_user = dev_user
 
 st.title("WELCOME :smile:")
-
+#TODO waht if a user is invalid. return propper error message to users
 with st.container(border=True):
 
     #Use columns to center the page_links
@@ -32,5 +32,12 @@ with st.container(border=True):
 
         continue_as_guest = st.button("Continue As Guest",use_container_width=True)
         if continue_as_guest:
-            st.session_state.current_user = "guest"
+
+            guest = {
+            "id": 00,
+            "username": "guest",
+            "password": "guest",
+            "role": "GUEST"
+            }
+            st.session_state["current_user"] = guest
             st.switch_page("pages/main_menu.py")
