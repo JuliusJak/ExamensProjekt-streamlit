@@ -5,6 +5,7 @@ from authentication import authentication
 import streamlit as st
 from api_requests.test_score_api import get_users_test_scores
 import matplotlib.pyplot as plt
+from components.navBar import navBar
 
 st.set_page_config(
     page_title="Profile",
@@ -43,9 +44,8 @@ def generate_line_chart(data):
     return fig
 
 
-
 authentication()
-
+navBar()
 test_scores = get_users_test_scores(st.session_state["current_user"]["username"])
 image_tests = []
 regular_test = []

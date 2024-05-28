@@ -10,9 +10,9 @@ if "main_page_content" not in st.session_state:
     st.session_state.main_page_content = None
 
 #NOTE Only for dev
-if "current_user" not in st.session_state:
-    dev_user = {'id': 2, 'username': 'bob', 'password': '321', 'role': 'ADMIN'}
-    st.session_state.current_user = dev_user
+# if "current_user" not in st.session_state:
+#     dev_user = {'id': 2, 'username': 'bob', 'password': '321', 'role': 'ADMIN'}
+#     st.session_state.current_user = dev_user
 
 st.title("WELCOME :smile:")
 

@@ -10,7 +10,7 @@ st.set_page_config(
 )
 
 #NOTE Needs more authenitcation since it's admin
-authentication()
+authentication(True)
 navBar()
 st.title("Admin page")
 
