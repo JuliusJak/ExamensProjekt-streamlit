@@ -12,7 +12,8 @@ if "test_score" not in st.session_state:
 
 if "image_test_score_submitted" not in st.session_state:
     st.session_state["image_test_score_submitted"] = False
-
+    
+#TODO Implement the timer
 st.write("You will have 1 minute to complete this test")
 st.write(st.session_state["question_index"])
 

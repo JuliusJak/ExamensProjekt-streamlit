@@ -13,6 +13,7 @@ if "test_score" not in st.session_state:
 if "regular_test_score_submitted" not in st.session_state:
     st.session_state["regular_test_score_submitted"] = False
     
+#TODO Implement the timer
 st.write("You will have 1 minute to complete this test")
 st.write(st.session_state["question_index"])
 
@@ -20,7 +21,6 @@ questions = get_questions()
 
 if st.session_state["question_index"] >= len(questions):
 
-    #TODO Implement the timer
     st.write(f"Your Final Score Is: {st.session_state["test_score"]}/{len(questions)}")
     st.write("Something something better then previous score...")
 

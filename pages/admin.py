@@ -1,6 +1,6 @@
 import streamlit as st
 from components.navBar import navBar
-from admin_features import manage_images, manage_questions, manage_users
+from admin_features import manage_images, manage_questions, manage_users,manage_study_materials
 from authentication import authentication
 
 
@@ -9,7 +9,6 @@ st.set_page_config(
     layout="wide"
 )
 
-#NOTE Needs more authenitcation since it's admin
 authentication(True)
 navBar()
 st.title("Admin page")
@@ -34,8 +33,8 @@ with st.container(border=True):
         manage_questions.admin_delete_question()
         
 with st.container(border=True):
-    if st.checkbox("Create New Study Material*"):
-        pass
+    if st.checkbox("Create New Study Material"):
+        manage_study_materials.admin_create_study_material()
 
 with st.container(border=True):
     if st.checkbox("Upload New Image Question"):

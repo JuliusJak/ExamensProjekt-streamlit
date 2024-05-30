@@ -58,9 +58,8 @@ def profile_page():
 
     col1,col2,col3 = st.columns([1,2,1])
     with col2:
-        #TODO do something about this
-        st.write("Users profile picture here")
-        st.write("Current users username: ", st.session_state["current_user"]["username"])
+
+        st.title(f"Profile Page - {st.session_state["current_user"]["username"]}")
 
         with st.container(border=True):
             st.subheader("Regular Tests")
