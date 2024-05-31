@@ -3,9 +3,9 @@ import streamlit as st
 
 def navBar():
 
-    pages = ["Main Menu","Study Material","Practice Questions","Admin","Profile"]
+    pages = ["Main Menu","Study Material","Practice Questions","Image Pracitce","Admin","Profile"]
 
-    col1,col2,col3,col4,col5 = st.columns(len(pages))
+    col1,col2,col3,col4,col5,col6 = st.columns(len(pages))
 
     with col1:
         st.page_link("pages/main_menu.py",use_container_width=True)    
@@ -17,7 +17,10 @@ def navBar():
         st.page_link("pages/study_questions_practice.py",use_container_width=True)
     
     with col4:
-        st.page_link("pages/admin.py",use_container_width=True)
+        st.page_link("pages/images_practice.py",use_container_width=True)
 
     with col5:
+        st.page_link("pages/admin.py",use_container_width=True)
+
+    with col6:
         st.page_link("pages/profile.py",use_container_width=True)

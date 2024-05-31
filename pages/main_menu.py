@@ -12,7 +12,7 @@ authentication()
 
 navBar()
 #NOTE Temporary
-st.write("Current User:",st.session_state["current_user"])
+#st.write("Current User:",st.session_state["current_user"])
 
 with st.container(border=True):
     

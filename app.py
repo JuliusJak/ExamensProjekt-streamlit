@@ -11,9 +11,9 @@ if "main_page_content" not in st.session_state:
     st.session_state.main_page_content = None
 
 #NOTE Only for dev
-if "current_user" not in st.session_state:
-    dev_user = {'id': 2, 'username': 'bob', 'password': '321', 'role': 'ADMIN'}
-    st.session_state.current_user = dev_user
+# if "current_user" not in st.session_state:
+#     dev_user = {'id': 2, 'username': 'bob', 'password': '321', 'role': 'ADMIN'}
+#     st.session_state.current_user = dev_user
 
 st.title("WELCOME :smile:")
 
@@ -28,7 +28,7 @@ with st.container(border=True):
             st.switch_page("pages/sign_in.py")
 
         sign_up = st.button("Sign Up",use_container_width=True)
-        if sign_in:
+        if sign_up:
             st.switch_page("pages/sign_up.py")
 
         continue_as_guest = st.button("Continue As Guest",use_container_width=True)

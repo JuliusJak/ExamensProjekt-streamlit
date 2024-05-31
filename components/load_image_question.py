@@ -26,5 +26,5 @@ def load_image_question(image_question):
             if min_x <= x <= max_x and min_y <= y <= max_y:
                 return True
             else:
-                return False
+                return None
             

@@ -2,8 +2,9 @@ import streamlit as st
 from api_requests.study_questions import get_questions
 from components.load_question import load_question
 from api_requests.test_score_api import add_test_score
+from authentication import authentication
 
-#TODO add more filtering for how the questions are selected
+authentication()
 if "question_index" not in st.session_state:
     st.session_state["question_index"] = 0
 
@@ -13,10 +14,6 @@ if "test_score" not in st.session_state:
 if "regular_test_score_submitted" not in st.session_state:
     st.session_state["regular_test_score_submitted"] = False
     
-#TODO Implement the timer
-st.write("You will have 1 minute to complete this test")
-st.write(st.session_state["question_index"])
-
 questions = get_questions()
 
 if st.session_state["question_index"] >= len(questions):
@@ -39,6 +36,11 @@ if st.session_state["question_index"] >= len(questions):
         st.session_state["test_score"] = 0  
         st.session_state["regular_test_score_submitted"] = False
         st.rerun()
+    
+    if st.button("Return To Main Menu"):
+        st.switch_page("pages/main_menu.py")
+        
+
 else:
 
     if st.toggle("Start Test"):   
